@@ -1,0 +1,40 @@
+modal-email-nova-senha {
+
+    #contentEmailSenha {
+        background-image: url('../assets/imgs/background/background-1.jpg');
+    }
+
+    .toolbar-background-md {
+        background: #fff !important;
+    }
+
+    .toolbar-title-md,
+        .bar-button-default-md,
+        .bar-button-clear-md-default,
+        .bar-button-md-default{
+            color: black;
+    }
+
+    #emailForm {
+        position: relative; 
+        top: 40vw; 
+    }
+
+    #mensagemErro {
+        color: red !important;
+        font-size: 15px !important;
+    }
+
+    #divDuvida {
+        margin-top: 30px;
+        font-size: 15px !important;
+        color: white !important;
+
+        a {
+          color: white !important;
+          text-decoration: underline;
+        }
+      }
+
+
+}

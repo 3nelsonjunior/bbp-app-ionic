@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-navbar>
+    <ion-row bottom>
+      <ion-title id="titleMeusDados">Alterar Senha</ion-title>
+    </ion-row>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding id="content-modal-senha">
+    <ion-row>
+      <ion-item style="border-bottom: none">
+        <ion-label stacked>Senha</ion-label>
+        <ion-input type="text" maxlength="12" [(ngModel)]="senhaDTO.senha"></ion-input>
+      </ion-item>
+    </ion-row>
+  <ion-row>
+    <ion-item>
+      <ion-label stacked>Confirmação da senha</ion-label>
+      <ion-input type="text" maxlength="12" [(ngModel)]="confirmaSenha.senha"></ion-input>
+    </ion-item>
+  </ion-row>
+  <div *ngIf="!senhaValida()" class="alert alert-danger">
+    <ion-item no-lines>
+      <p id="mensagemErro" > Senhas diferentes!</p>
+    </ion-item>
+  </div>
+  
+
+  <ion-row row-12 id="linhaBtnSalvarSenha">
+    <ion-col col-6>
+      <button color="secondary" ion-button block round [disabled]="!habilitarSalvar()" (click)="mostrarAlertSalvarAlteracao()">
+        Salvar
+      </button>
+    </ion-col>
+    <ion-col col-6>
+      <button color="danger" ion-button block round (click)="fecharModal()">
+        Cancelar
+      </button>
+    </ion-col>
+  </ion-row>
+</ion-content>

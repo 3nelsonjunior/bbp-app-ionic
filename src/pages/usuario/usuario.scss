@@ -1,0 +1,91 @@
+page-usuario {
+
+    #content-usuario {
+        /* .no-scroll .scroll-content{
+            overflow: hidden;
+       } */
+       background-image: url('../assets/imgs/background/background-1.jpg');
+    }
+
+    #divSegmento {
+        width: 100% !important;
+        height: 100% !important;
+    }
+
+    // Segmento
+    .segment-md .segment-button {
+        color: #fff !important;
+    }
+
+    .segment-md .segment-button.activated, .segment-md .segment-button.segment-activated {
+        border-color: #fff;
+        opacity: 1;
+    }
+
+    #titleMeusDados {
+        margin-top: 5px;
+    }
+
+    #imgCircle {
+        width: 150px;
+        height: 150px;
+        border-radius: 100%;
+        margin: 25px auto 0 auto;
+        margin-bottom: 10px;
+    }
+
+    #linhaBtnAlterarFoto {
+        margin-top: 10px;
+    }
+
+    #linhaBtnAlterarSenha {
+        margin-top: 10px;
+    }
+
+    #iconSenha, #iconAlteraFoto {
+        margin-right: 5px;
+        text-transform: none !important;
+    }
+
+    #buttonEditar {
+        border:1px solid #fff;
+        color: #fff;
+    }
+
+    .item-input::after { 
+        border-bottom-color: transparent !important; 
+    }
+
+    #mensagemErro {
+        color: red;
+    }
+
+    /* .slide-background {
+        border-color: transparent ;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        -webkit-filter: blur(3px);
+        -moz-filter: blur(3px);
+        -o-filter: blur(3px);
+        -ms-filter: blur(3px);
+        filter: blur(2px);
+    } */
+
+    /* .login-container {
+        position: absolute;
+        z-index: 2;
+        top: 0;
+   
+        margin: 0 auto;
+        padding: 10vw;
+        
+        text-align: center !important;
+        color: white;
+        display: grid;
+        align-items: center !important;
+        height: 100%;
+
+        opacity: 1;
+    } */
+}

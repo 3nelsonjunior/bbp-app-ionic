@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{tituloBarbearia}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+    <ion-tabs selectedIndex="1" (ionChange)="changeTab($event)" color="dark">
+        <ion-tab [root]="servicoPage" tabTitle="Serviços" tabIcon="ios-cut"></ion-tab>
+        <ion-tab [root]="horarioPage" tabTitle="Horários" tabIcon="ios-clock"></ion-tab>
+        <ion-tab [root]="diaPage" tabTitle="Dias" tabIcon="ios-calendar"></ion-tab>
+    </ion-tabs>
+</ion-content>

@@ -1,0 +1,56 @@
+<ion-header>
+    <ion-navbar>
+      <ion-title>{{titulo}}</ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+  
+  <ion-content padding id="content-modal-dia">
+        <ion-list>
+            <ion-item>
+                <ion-label stacked>Dia</ion-label>
+                <ion-input 
+                    type="text" 
+                    disabled="true" 
+                    [(ngModel)]="diaBarbeariaDTO.dataExibicao"
+                    >
+                </ion-input>
+                <button ion-button item-end icon-left (click)="openCalendar()">
+                    <ion-icon name="ios-calendar"></ion-icon>
+                </button>
+            </ion-item>
+            <ion-item style="margin-top: 5px">
+                    <ion-label stacked>Horário de abertura</ion-label>
+                    <ion-select [(ngModel)]="horaInicioDia" interface="popover">
+                        <ion-option [value]="item" (ionSelect)="selecionaAbrirDia(item)" *ngFor="let item of listaHoras">
+                            {{item}}
+                        </ion-option>
+                    </ion-select>
+            </ion-item>
+            <ion-item style="margin-top: 5px">
+                <ion-label stacked>Horário de fechamento</ion-label>
+                <ion-select [(ngModel)]="horaFecharDia" interface="popover">
+                    <ion-option [value]="item" (ionSelect)="selecionaFecharDia(item)" *ngFor="let item of listaHoras">
+                        {{item}}
+                    </ion-option>
+                </ion-select>
+            </ion-item>
+        </ion-list>
+  
+  </ion-content>
+
+  <ion-footer>
+    <ion-row row-12>
+      <ion-col col-6 >
+        <button  color="secondary" ion-button block round  (click)="salvarDia()">
+          Salvar
+        </button>
+      </ion-col>
+      <ion-col col-6 >
+        <button color="danger" ion-button block round (click)="fecharModal()">
+          Cancelar
+        </button>
+      </ion-col>
+    </ion-row>
+</ion-footer>
+  

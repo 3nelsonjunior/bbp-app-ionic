@@ -1,0 +1,40 @@
+usuario-cadastro {
+    #content-usuario-cadastro {
+        background-image: url('../assets/imgs/background/background-1.jpg');
+    }
+    
+    .toolbar-background-md {
+        background: #fff !important;
+    }
+
+    .toolbar-title-md,
+        .bar-button-default-md,
+        .bar-button-clear-md-default,
+        .bar-button-md-default{
+            color: black;
+    }
+
+    #itemErro {
+        margin-top: 0px !important;
+        margin-bottom: 1px !important;
+    }
+    
+    #mensagemErro {
+        color: red;
+        font-size: 10px !important;
+    }
+
+    #linhaBotao {
+        position: fixed;
+        left: 0;
+        bottom: 10px;
+        right: 0;
+    }
+
+    .footer {
+        position:fixed;
+        height:50px;
+    }
+
+}
+

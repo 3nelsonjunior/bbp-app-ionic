@@ -1,0 +1,22 @@
+page-barbearia {
+
+    .segment-md .segment-button {
+        color: #fff !important;
+    }
+
+    .segment-md .segment-button.activated, .segment-md .segment-button.segment-activated {
+        border-color: #000;
+        opacity: 1;
+    }
+
+    #toolbarSelect {
+        min-height: 30px;
+    }
+
+    #imagemBarbearia {
+        height: 100px;
+        width: 100%;
+    }
+
+
+}

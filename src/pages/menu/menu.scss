@@ -1,0 +1,54 @@
+page-menu {
+
+    ion-menu#menuPrincipal {
+        .toolbar-background-md{
+            background: -webkit-gradient(left top, $SIDEMENU_TOP, $SIDEMENU_BOTTOM);
+            background: -o-linear-gradient(bottom right, $SIDEMENU_TOP, $SIDEMENU_BOTTOM);
+            background: -moz-linear-gradient(bottom right, $SIDEMENU_TOP, $SIDEMENU_BOTTOM);
+            background: linear-gradient(to bottom right, $SIDEMENU_TOP, $SIDEMENU_BOTTOM);
+            height: 100%;
+        }
+    }  
+    
+    #imagemUsuarioLogado {
+        width: 60px;
+        height: 60px;
+    }
+    h6 {
+        text-align: left;
+        margin-top: 10px;
+        margin-bottom: 0px;
+        color: #fff;
+    }
+
+    p {
+        text-align: left;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        color: #fff;
+    }
+
+    .profilepic {
+        border:1px solid #fff;
+        width: 85%;
+        height: 85%;
+        border-radius: 100%;
+    }
+    .profilepic-border {
+        position: relative;
+    }
+
+
+    #buttonsHeader {
+        height: 80%;
+        width: 100px;
+        text-transform: none;
+        border:1px solid #fff;
+        background: -webkit-gradient(left top, $SIDEMENU_TOP, $SIDEMENU_BOTTOM);
+        background: -o-linear-gradient(bottom right, $SIDEMENU_TOP, $SIDEMENU_BOTTOM);
+        background: -moz-linear-gradient(bottom right, $SIDEMENU_TOP, $SIDEMENU_BOTTOM);
+        background: linear-gradient(to bottom right, $SIDEMENU_TOP, $SIDEMENU_BOTTOM);
+
+    }
+
+}

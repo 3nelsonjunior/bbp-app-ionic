@@ -1,0 +1,38 @@
+<ion-header no-border>
+    <ion-navbar>
+        <ion-title>Recuperar senha via email</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content id="contentEmailSenha" padding>
+    <form [formGroup]="emailForm" id="emailForm">
+        <ion-grid>
+            <ion-row style="margin-bottom: 10px">
+                <ion-item>
+                    <ion-label stacked>Email</ion-label>
+                    <ion-input type="text" maxlength="50" formControlName="email"></ion-input>
+                </ion-item>
+                <div *ngIf="!validacaoCampo()" class="alert alert-danger">
+                    <ion-item no-lines>
+                        <p id="mensagemErro"> {{mensagemErro}}</p>
+                    </ion-item>
+                </div>
+            </ion-row>
+            <ion-row row-12 >
+                <ion-col col-6>
+                    <button color="secondary" ion-button block round (click)="mostrarAlertConfirmarRecuperarSenha()" [disabled]="emailForm.invalid">Enviar</button>
+                </ion-col>
+                <ion-col col-6>
+                  <button color="danger" ion-button block round (click)="fecharModal()">
+                    Cancelar
+                  </button>
+                </ion-col>
+              </ion-row>
+            <div id="divDuvida">
+                <span>Dúvida?
+                    <a  (click)="mostrarAlertDuvida()">Clique aqui!</a>
+                </span>
+            </div>
+        </ion-grid>
+    </form>
+</ion-content>

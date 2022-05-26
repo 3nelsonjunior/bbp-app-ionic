@@ -1,0 +1,116 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{titulo}}</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="fecharModal()">
+        <ion-icon name="md-close"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding id="content-modal-endereco">
+  <form [formGroup]="enderecoForm">
+    <ion-row>
+      <ion-item>
+        <ion-label stacked>CEP</ion-label>
+        <ion-input type="text" maxlength="15" formControlName="cep"></ion-input>
+        <button ion-button item-end icon-left (click)="obterEnderecoPeloCep()">
+          <ion-icon name="ios-search"></ion-icon>
+        </button>
+      </ion-item>
+      <div *ngIf="!validacaoDeCampos('cep')" class="alert alert-danger">
+          <ion-item no-lines>
+              <p id="mensagemErro"> {{mensagemErro[0]}}</p>
+          </ion-item>
+      </div>
+    </ion-row>
+    <ion-row>
+      <ion-item>
+        <ion-label stacked>Logradouro</ion-label>
+        <ion-input type="text" maxlength="100" formControlName="logradouro"></ion-input>
+      </ion-item>
+      <div *ngIf="!validacaoDeCampos('logradouro')" class="alert alert-danger">
+          <ion-item no-lines>
+              <p id="mensagemErro"> {{mensagemErro[1]}}</p>
+          </ion-item>
+      </div>
+    </ion-row>
+    <ion-row>
+      <ion-item>
+        <ion-label stacked>Nº</ion-label>
+        <ion-input type="text" maxlength="100" formControlName="numero"></ion-input>
+      </ion-item>
+      <div *ngIf="!validacaoDeCampos('numero')" class="alert alert-danger">
+          <ion-item no-lines>
+              <p id="mensagemErro"> {{mensagemErro[2]}}</p>
+          </ion-item>
+      </div>
+    </ion-row>
+    <ion-row>
+      <ion-item>
+        <ion-label stacked>Complemento</ion-label>
+        <ion-input type="text" maxlength="30" formControlName="complemento"></ion-input>
+      </ion-item>
+    </ion-row>
+    <ion-row>
+      <ion-item>
+        <ion-label stacked>Bairro</ion-label>
+        <ion-input type="text" maxlength="50" formControlName="bairro"></ion-input>
+      </ion-item>
+      <div *ngIf="!validacaoDeCampos('bairro')" class="alert alert-danger">
+          <ion-item no-lines>
+              <p id="mensagemErro"> {{mensagemErro[4]}}</p>
+          </ion-item>
+      </div>
+    </ion-row>
+    <ion-row>
+      <ion-item>
+        <ion-label stacked>Cidade</ion-label>
+        <ion-input type="text" maxlength="50" formControlName="cidade"></ion-input>
+      </ion-item>
+      <div *ngIf="!validacaoDeCampos('cidade')" class="alert alert-danger">
+          <ion-item no-lines>
+              <p id="mensagemErro"> {{mensagemErro[5]}}</p>
+          </ion-item>
+      </div>
+    </ion-row>
+    <ion-row>
+      <ion-item>
+        <ion-label stacked>Estado</ion-label>
+        <ion-input type="text" maxlength="2" formControlName="estado"></ion-input>
+      </ion-item>
+      <div *ngIf="!validacaoDeCampos('estado')" class="alert alert-danger">
+          <ion-item no-lines>
+              <p id="mensagemErro"> {{mensagemErro[6]}}</p>
+          </ion-item>
+      </div>
+    </ion-row>
+    <ion-row>
+      <ion-item>
+        <ion-label stacked>País</ion-label>
+        <ion-input type="text" maxlength="50" formControlName="pais"></ion-input>
+      </ion-item>
+      <div *ngIf="!validacaoDeCampos('pais')" class="alert alert-danger">
+          <ion-item no-lines>
+              <p id="mensagemErro"> {{mensagemErro[7]}}</p>
+          </ion-item>
+      </div>
+    </ion-row>
+  </form>
+</ion-content>
+
+<ion-footer>
+    <ion-row row-12 style="margin-bottom: 10px">
+      <ion-col col-6 >
+        <button  color="secondary" ion-button block round [disabled]="enderecoForm.invalid" (click)="salvarEndereco()">
+          Salvar
+        </button>
+      </ion-col>
+      <ion-col col-6 >
+        <button color="danger" ion-button block round (click)="fecharModal()">
+          Cancelar
+        </button>
+      </ion-col>
+    </ion-row>
+</ion-footer>

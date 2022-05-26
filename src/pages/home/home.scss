@@ -1,0 +1,30 @@
+page-home {
+    background: #000;
+    ion-card {
+        margin-top: 10px !important;
+        border-color: #000 !important;
+        border: 2px !important;
+    }
+
+    #buttonMarcarHorario {
+        border:1px solid #fff;
+        color: #fff;
+        overflow: visible;
+        .label {
+            position: absolute;
+            right: 55px;
+            background: #32db64;
+            height: 24px;
+            line-height: 16px;
+            padding-left: 8px;
+            padding-right: 8px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            border-radius: 3px;
+            color: #fff;
+            box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.14), 0 4px 5px rgba(0, 0, 0, 0.1);
+        }
+
+    }
+
+}

@@ -1,0 +1,27 @@
+<ion-header no-border>
+  <ion-navbar>
+      <ion-title>Login</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content id="contentLogin" padding>
+  <form [formGroup]="loginForm" id="formLogin">
+    <ion-grid>
+    <ion-row>
+      <ion-item>
+        <ion-label stacked>Login</ion-label>
+        <ion-input type="text" maxlength="20" formControlName="login"></ion-input>
+      </ion-item>
+    </ion-row>
+    <ion-row style="margin-bottom: 25px">
+      <ion-item>
+        <ion-label stacked>Senha</ion-label>
+        <ion-input type="password" maxlength="20" formControlName="senha"></ion-input>
+      </ion-item>
+    </ion-row>
+    <ion-row>
+      <button color="secondary" ion-button block round (click)="login()" [disabled]="loginForm.invalid">Login</button>
+    </ion-row>
+  </ion-grid>
+  </form>
+</ion-content>

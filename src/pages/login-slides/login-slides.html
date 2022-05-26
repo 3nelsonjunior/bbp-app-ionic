@@ -1,0 +1,46 @@
+<ion-header no-border>
+  <ion-navbar transparent>
+  </ion-navbar>
+</ion-header>
+<ion-content class="primary-font">
+  <ion-slides pager="false" autoplay="1500" loop="true" speed="1500" effect="fade">
+    <ion-slide class="slide-background swiper-no-swiping" *ngFor="let background of backgrounds" [ngStyle]="{'background-image': 'url(' + background +')'}">
+    </ion-slide>
+  </ion-slides>
+  <div class="login-container">
+   <ion-grid>
+      <ion-row>
+        <button icon-left id="buttonLoginFacebook" ion-button block round (click)="obterLoginFacebook()">
+          <ion-icon id="iconLogin" item-start name="logo-facebook"></ion-icon>
+          Login via facebook
+        </button>
+      </ion-row>
+
+      <ion-row>
+        <button icon-left id="buttonLoginGoogle" id="buttonLoginGoogle"  ion-button block round (click)="obterLoginGoogle()">
+          <ion-icon id="iconLogin" item-start name="logo-google"></ion-icon>
+          Login via google
+        </button>
+      </ion-row>
+
+      <ion-row style="margin-bottom: 50px">
+        <button class="login-button" color="dark" ion-button block round (click)="login()">
+          Login
+        </button>
+      </ion-row>
+
+      <div>
+        <span>Ainda não possui conta?
+          <button class="login-button" ion-button block round outline color="light" (click)="cadastrar()">
+            Cadastre-se
+          </button>
+        </span>
+      </div>
+      <div id="esqueciSenha">
+        <span>Esqueceu sua senha?
+          <a target="_blank" (click)="abrirModalRecuperarSenha()">Clique aqui!</a>
+        </span>
+      </div>
+    </ion-grid>
+  </div>
+</ion-content>

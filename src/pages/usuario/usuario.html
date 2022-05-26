@@ -1,0 +1,180 @@
+<ion-header>
+  <ion-navbar>
+    <button left ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title id="titleMeusDados">Meus dados</ion-title>
+  </ion-navbar>
+  <ion-toolbar>
+    <ion-row>
+      <ion-segment [(ngModel)]="segmentUsuario">
+        <ion-segment-button value="segmentAbaDadosBasicos">
+          Básicos
+        </ion-segment-button>
+        <ion-segment-button value="segmentAbaEndereco">
+          Endereços
+        </ion-segment-button>
+        <ion-segment-button value="segmentAbaDadosAcesso">
+          App
+        </ion-segment-button>
+      </ion-segment>
+    </ion-row>
+  </ion-toolbar>
+
+
+
+</ion-header>
+
+<ion-content padding id="content-usuario">
+  <div [ngSwitch]="segmentUsuario" (swipe)="swipe($event)" id="divSegmento">
+    <form [formGroup]="usuarioForm">
+      <!-- Aba dados básicos-->
+      <ion-list *ngSwitchCase="'segmentAbaDadosBasicos'">
+        <ion-row>
+          <ion-item>
+            <ion-label stacked>Nome completo</ion-label>
+            <ion-input 
+              type="text" 
+              maxlength="50" 
+              formControlName="nome"
+              [disabled]="desabilitarEdicao"
+              >
+            </ion-input>
+          </ion-item>
+          <div *ngIf="!validacaoDeCampos('nome')" class="alert alert-danger">
+            <ion-item no-lines>
+              <p id="mensagemErro"> {{mensagemErro[0]}}</p>
+            </ion-item>
+          </div>
+        </ion-row>
+        <ion-row>
+          <ion-item>
+            <ion-label stacked>Login</ion-label>
+            <ion-input 
+              type="text" 
+              maxlength="20" 
+              formControlName="apelido"
+              [disabled]="desabilitarEdicao"
+              >
+            </ion-input>
+          </ion-item>
+          <div *ngIf="!validacaoDeCampos('apelido')" class="alert alert-danger">
+            <ion-item no-lines>
+              <p id="mensagemErro"> {{mensagemErro[1]}}</p>
+            </ion-item>
+          </div>
+        </ion-row>
+        <ion-row>
+          <ion-item>
+            <ion-label stacked>Email</ion-label>
+            <ion-input 
+              type="text" 
+              maxlength="50" 
+              formControlName="email"
+              [disabled]="desabilitarEdicao"
+              >
+            </ion-input>
+          </ion-item>
+          <div *ngIf="!validacaoDeCampos('email')" class="alert alert-danger">
+            <ion-item no-lines>
+              <p id="mensagemErro"> {{mensagemErro[2]}}</p>
+            </ion-item>
+          </div>
+        </ion-row>
+        <ion-row>
+          <ion-item no-lines>
+            <ion-label stacked>Dt. Nasc.</ion-label>
+            <ion-datetime 
+              type="datetime-local" 
+              displayFormat="YYYY-MM-DD" 
+              pickerFormat="DD/MM/YYYY" 
+              formControlName="dtNasc" 
+              doneText="Escolher"
+              cancelText="Cancelar"
+              [disabled]="desabilitarEdicao"
+              >
+            </ion-datetime>
+          </ion-item>
+          <div *ngIf="!validacaoDeCampos('dtNasc')" class="alert alert-danger">
+            <ion-item no-lines>
+              <p id="mensagemErro"> {{mensagemErro[3]}}</p>
+            </ion-item>
+          </div>
+        </ion-row>
+        <ion-row>
+          <ion-item>
+            <ion-label stacked>Telefone principal</ion-label>
+            <ion-input
+              style="width: 100%" 
+              type="text" 
+              maxlength="20" 
+              formControlName="telefone1"
+              [disabled]="desabilitarEdicao" 
+              [brmasker]="{phone: true}"
+              >
+            </ion-input>
+          </ion-item>
+          <div *ngIf="!validacaoDeCampos('telefone1')" class="alert alert-danger">
+            <ion-item no-lines>
+              <p id="mensagemErro"> {{mensagemErro[4]}}</p>
+            </ion-item>
+          </div>
+        </ion-row>
+      </ion-list>
+
+      <!-- Aba endereço-->
+      <ion-list *ngSwitchCase="'segmentAbaEndereco'">
+        <ion-item>
+          <button ion-button block round top [disabled]="desabilitarEdicao" color="secondary" item-end icon-left (click)="abrirModalNovoEndereco()">
+            <ion-icon name="ios-create"></ion-icon>
+            Novo endereço
+          </button>
+        </ion-item>
+        <ion-list *ngFor="let endereco of listaEndereco">
+          <ion-item>
+            {{endereco.logradouro}}
+            <button mini ion-button round color="gold" item-end icon-left [disabled]="desabilitarEdicao" id="buttonEditar" (click)="abrirModalAlterarEndereco(endereco)">
+              <ion-icon name="ios-create"></ion-icon>
+              Alterar
+            </button>
+            <button mini ion-button round color="danger" item-end icon-left [disabled]="desabilitarEdicao" (click)="confirmaDeletarEndereco(endereco.id)">
+              <ion-icon name="ios-trash"></ion-icon>
+              Excluir
+            </button>
+          </ion-item>
+        </ion-list>
+      </ion-list>
+
+      <!-- Aba dadops de acesso -->
+      <ion-list *ngSwitchCase="'segmentAbaDadosAcesso'">
+        <ion-grid>
+          <ion-row center>
+            <img id="imgCircle" [src]="foto">
+          </ion-row>
+          <ion-row id="linhaBtnAlterarFoto">
+            <button color="gold" ion-button block round [disabled]="desabilitarEdicao" id="buttonEditar" (click)="escolherModoAlterarFoto()">
+              <ion-icon id="iconAlteraFoto" name="ios-image"></ion-icon>
+              Alterar Foto
+            </button>
+          </ion-row>
+          <ion-row id="linhaBtnAlterarSenha">
+            <button color="gold" ion-button block round [disabled]="desabilitarEdicao" id="buttonEditar" (click)="abrirModalAlterarSenha()">
+              <ion-icon id="iconSenha" item-start name="ios-key"></ion-icon>
+              Alterar senha
+            </button>
+          </ion-row>
+        </ion-grid>
+      </ion-list>
+    </form>
+  </div>
+  <ion-fab right bottom #fab>
+    <button ion-fab menuClose [color]="corBotaoHabilitarEdicao" (click)="habilitarDesabilitarEdicao()" id="buttonEditar">
+      <ion-icon item-start name="ios-create"></ion-icon>
+    </button>
+    <ion-fab-list side="left">
+      <button [(color)]="corBotaoSalvar" ion-fab (click)="confirmarAlterarUsuario($event, fab)">
+        <ion-icon item-start name="ios-checkmark-circle-outline"></ion-icon>
+      </button>
+    </ion-fab-list>
+  </ion-fab>
+</ion-content>

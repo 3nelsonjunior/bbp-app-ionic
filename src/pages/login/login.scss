@@ -1,0 +1,22 @@
+page-login {
+    #contentLogin {
+        background-image: url('../assets/imgs/background/background-1.jpg');
+    }
+    
+    .toolbar-background-md {
+        background: #fff !important;
+    }
+
+    .toolbar-title-md,
+        .bar-button-default-md,
+        .bar-button-clear-md-default,
+        .bar-button-md-default{
+            color: black;
+    }
+
+    #formLogin {
+        position: relative; 
+        top: 40vw; 
+    }
+
+}

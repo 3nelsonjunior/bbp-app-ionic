@@ -1,0 +1,48 @@
+<ion-menu [content]="content" id="menuPrincipal">
+    <ion-header>
+        <ion-toolbar id="menu">
+            <ion-row wrap center>
+                <ion-col col-3>
+                    <div class="item profilepic-border" align="center">
+                        <img class="profilepic padding-bottom" [src]="fotoUsuario"
+                            id="imagemUsuarioLogado">
+                    </div>
+                </ion-col>
+                <ion-col col-9>
+                    <h6>{{this.lsUsuarioService.getLocalStorageUsuario().usuarioLogado.nome}}</h6>
+                    <p>{{this.lsUsuarioService.getLocalStorageUsuario().usuarioLogado.apelido}}</p>
+                </ion-col>
+            </ion-row>
+            <ion-row wrap center>
+                <ion-col col-6>
+                    <div align="left">
+                        <button id="buttonsHeader" menuClose ion-button (click)="alterarMeusDados()">
+                            <ion-icon item-start name="ios-create"></ion-icon>
+                            Alterar
+                        </button>
+                    </div>
+                </ion-col>
+                <ion-col col-6>
+                    <div align="left">
+                        <button id="buttonsHeader" menuClose ion-button (click)="logout()">
+                            <ion-icon item-start name="ios-log-out"></ion-icon>
+                            Logout
+                        </button>
+                    </div>
+                </ion-col>
+            </ion-row>
+        </ion-toolbar>
+    </ion-header>
+
+    <ion-content>
+        <ion-list>
+            <button menuClose ion-item *ngFor="let p of paginas" (click)="abrirPagina(p)">
+                <ion-icon item-start [name]="p.icon"></ion-icon>
+                {{p.titulo}}
+            </button>
+        </ion-list>
+    </ion-content>
+
+</ion-menu>
+
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

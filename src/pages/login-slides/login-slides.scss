@@ -1,0 +1,67 @@
+page-login-slides {
+    #buttonLoginFacebook {
+        background-color: #3c5898;
+    }
+
+    #buttonLoginGoogle {
+        background-color: #db4437;
+    }
+
+    .scroll-content {
+        margin-top: 0 !important;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+      }
+      
+      .logo {
+        width: 70%;
+        height: auto;
+        margin-bottom: 15vh;
+        padding-top: 9vh;
+      }
+   
+      .slide-background {
+        border-color: transparent ;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        -webkit-filter: blur(3px);
+        -moz-filter: blur(3px);
+        -o-filter: blur(3px);
+        -ms-filter: blur(3px);
+        filter: blur(2px);
+      }
+   
+       ::-webkit-input-placeholder {
+        color: black !important;
+      }
+      
+      .login-container {
+        position: absolute;
+        z-index: 2;
+        top: 0;
+   
+        width: 100%;
+        margin: 0 auto;
+        padding: 10vw;
+        
+        text-align: center;
+        color: white;
+        display: flex;
+        align-items: center;
+        height: 100%;
+
+        opacity: 1;
+      }
+    
+      #esqueciSenha {
+        margin-top: 30px;
+        font-size: 15px !important;
+
+        a {
+          color: white !important;
+          text-decoration: underline;
+        }
+      }
+}

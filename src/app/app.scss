@@ -1,0 +1,31 @@
+/* $SIDEMENU_TOP: #3a3939;
+$SIDEMENU_BOTTOM: rgba(248, 244, 244, 0.966);
+$SIDEMENU_TRANSPARENCY:  rgb(10, 10, 10); */
+$SIDEMENU_TOP: rgb(10, 10, 10);
+$SIDEMENU_BOTTOM:  rgb(10, 10, 10);
+$SIDEMENU_TRANSPARENCY:  rgb(10, 10, 10);
+
+
+ion-header {
+    .toolbar-background-md{
+        background: -webkit-gradient(left top, $SIDEMENU_TOP, $SIDEMENU_BOTTOM);
+        background: -o-linear-gradient(bottom right, $SIDEMENU_TOP, $SIDEMENU_BOTTOM);
+        background: -moz-linear-gradient(bottom right, $SIDEMENU_TOP, $SIDEMENU_BOTTOM);
+        background: linear-gradient(to bottom right, $SIDEMENU_TOP, $SIDEMENU_BOTTOM);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7db35f', endColorstr='#00568f',GradientType=1 ); /* IE6-9 */ 
+    }
+        
+        .toolbar-title-md,
+        .bar-button-default-md,
+        .bar-button-clear-md-default,
+        .bar-button-md-default{
+            color: #fff;
+        }
+        
+}
+
+ion-navbar.toolbar {
+    min-height: 10px;
+  }
+
+

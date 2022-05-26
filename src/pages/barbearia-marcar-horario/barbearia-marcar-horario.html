@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar id="toolbarSelect">
+    <!-- <img id="imagemBarbearia" src="assets/imgs/slides/barbearia.jpg" > -->
+    <ion-item id="itemSelect" >
+      <ion-label>Selecione o dia: </ion-label>
+      <ion-select 
+        [(ngModel)]="diaSelecionado" 
+        name="dia" 
+        multiple="false" 
+        (ionChange)="selecionarDia($event)">
+        <ion-option [value]="item" *ngFor="let item of listaDias">
+          {{item.dataCustomizadaDTO.dia}}/{{item.dataCustomizadaDTO.mes}}/{{item.dataCustomizadaDTO.ano}}
+        </ion-option>
+      </ion-select>
+    </ion-item>
+    
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <div *ngIf="listaHorariosExibidos">
+    <ion-list>
+      <ion-item-sliding *ngFor="let item of listaHorariosExibidos">
+        <ion-item style="height: 60px; ">
+          <ion-thumbnail item-start>
+            <img id="imagemHorario" src="assets/imgs/icones/cadeira-vazia.png">
+          </ion-thumbnail>
+          <h2>{{item.id}}</h2>
+          <p style="color: green">Disponivel</p>
+        </ion-item>
+        <ion-item-options side="right">
+            <button ion-button color="secondary">
+                <ion-icon name="ios-cut"></ion-icon> Marcar
+            </button>
+            <button ion-button color="danger">
+                <ion-icon name="ios-close"></ion-icon> Cancelar
+            </button>
+        </ion-item-options>
+      </ion-item-sliding>
+    </ion-list>
+  </div>
+</ion-content>

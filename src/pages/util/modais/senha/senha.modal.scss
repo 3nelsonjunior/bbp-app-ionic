@@ -1,0 +1,32 @@
+modal-senha {
+    #content-modal-senha {
+        background-image: url('../assets/imgs/background/background-1.jpg');
+    }
+
+    #linhaBtnSalvarSenha {
+        margin-top: 100px;
+    }
+
+    #iconBotao{
+        margin-right: 5px;
+        text-transform: none !important;
+    }
+
+    #mensagemErro {
+        color: red;
+    }
+
+    ion-item {
+        border-bottom-width: 20px !important;
+        border-bottom-color: #daff00 !important;
+    }
+
+    /* Workaround to hide android default validation colors */
+    ion-item.item-md.item-input.input-has-focus .item-inner,
+    ion-item.item-md.item-input.ng-valid.input-has-value:not(.input-has-focus) .item-inner,
+    ion-item.item-md.item-input.ng-invalid.ng-touched:not(.input-has-focus) .item-inner {
+        border-bottom-color: #dadada;
+        box-shadow: none;
+    }
+
+}

@@ -1,0 +1,89 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>Cadastrar usuário</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding id="content-usuario-cadastro">
+    <form [formGroup]="cadastroUsuarioForm">
+        <ion-row>
+            <ion-item>
+                <ion-label stacked>Nome completo</ion-label>
+                <ion-input type="text" maxlength="50" formControlName="nome"></ion-input>
+            </ion-item>
+            <div *ngIf="!validacaoDeCampos('nome')" class="alert alert-danger">
+                <ion-item no-lines>
+                    <p id="mensagemErro"> {{mensagemErro[0]}}</p>
+                </ion-item>
+            </div>
+        </ion-row>
+        <ion-row>
+            <ion-item>
+                <ion-label stacked>Login</ion-label>
+                <ion-input type="text" maxlength="20" formControlName="apelido"></ion-input>
+            </ion-item>
+            <div *ngIf="!validacaoDeCampos('apelido')" class="alert alert-danger">
+                <ion-item no-lines>
+                    <p id="mensagemErro"> {{mensagemErro[1]}}</p>
+                </ion-item>
+            </div>
+        </ion-row>
+        <ion-row>
+            <ion-item>
+                <ion-label stacked>Senha</ion-label>
+                <ion-input type="password" maxlength="20" formControlName="senha"></ion-input>
+            </ion-item>
+            <div *ngIf="!validacaoDeCampos('senha')" class="alert alert-danger">
+                <ion-item no-lines>
+                    <p id="mensagemErro"> {{mensagemErro[2]}}</p>
+                </ion-item>
+            </div>
+        </ion-row>
+        <ion-row>
+            <ion-item>
+                <ion-label stacked>Email</ion-label>
+                <ion-input type="text" maxlength="50" formControlName="email"></ion-input>
+            </ion-item>
+            <div *ngIf="!validacaoDeCampos('email')" class="alert alert-danger">
+                <ion-item no-lines>
+                    <p id="mensagemErro"> {{mensagemErro[4]}}</p>
+                </ion-item>
+            </div>
+        </ion-row>
+        <ion-row>
+            <ion-item>
+                <ion-label stacked>Dt. Nasc.</ion-label>
+                <ion-datetime type="datetime-local" displayFormat="YYYY-MM-DD" pickerFormat="DD/MM/YYYY" formControlName="dtNasc" doneText="Escolher"
+                    cancelText="Cancelar">
+                </ion-datetime>
+            </ion-item>
+            <div *ngIf="!validacaoDeCampos('dtNasc')" class="alert alert-danger">
+                <ion-item no-lines>
+                    <p id="mensagemErro"> {{mensagemErro[3]}}</p>
+                </ion-item>
+            </div>
+        </ion-row>
+        <ion-row>
+            <ion-item>
+                <ion-label stacked>Telefone principal</ion-label>
+                <ion-input type="text" maxlength="20" formControlName="telefone1" [brmasker]="{phone: true}"></ion-input>
+            </ion-item>
+            <div *ngIf="!validacaoDeCampos('telefone1')" class="alert alert-danger">
+                <ion-item no-lines>
+                    <p id="mensagemErro"> {{mensagemErro[5]}}</p>
+                </ion-item>
+            </div>
+        </ion-row>
+    </form>
+</ion-content>
+
+<ion-footer>
+        <ion-row row-12 id="linhaBotao">
+            <ion-col col-6>
+                <button color="secondary" ion-button block round (click)="confirmarCriarUsuario()" [disabled]="cadastroUsuarioForm.invalid">Salvar</button>
+            </ion-col>
+            <ion-col col-6>
+                <button id="buttonRegistrar" color="danger" ion-button block round (click)="voltar()">Cancelar</button>
+            </ion-col>
+        </ion-row>
+</ion-footer>

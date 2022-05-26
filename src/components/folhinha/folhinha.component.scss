@@ -1,0 +1,38 @@
+folhinha-component {
+    .div-principal{
+        background-color: #000 !important;
+        color: #fff !important;
+        width: 80px;
+        height: 50px;
+
+        ion-card {
+            position: relative;
+            text-align: center;
+            margin-top: 10px;
+            margin-left: 0px;
+            background: transparent;
+            height: 100%;
+            width: 100%;
+          }
+        
+          .card-title {
+            position: absolute;
+            top: 20%;
+            font-size: 2.0em;
+            width: 100%;
+            font-weight: bold;
+            color: #fff;
+
+            .card-subtitle {
+                font-size: 1.0em;
+                position: absolute;
+                top: 52%;
+                width: 100%;
+                color: #fff;
+            }
+        }
+    }
+
+    
+    
+}
